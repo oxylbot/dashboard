@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+ - "11.6.0"
+cache: npm
+
+git:
+  depth: 3
+
+env:
+ - NODE_ENV=development
+
+install:
+ - npm install
+ - npm run bundle
+
+script:
+ - eslint . --quiet
