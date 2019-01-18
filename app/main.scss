@@ -5,4 +5,43 @@
 
 body {
 	font-family: "IBM Plex Sans", sans-serif;
+	color: $color-4;
+}
+
+.background {
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+	background-color: $color-1;
+	background-image: url("./assets/background.png");
+
+	transform: translate3d(0, 0, 0);
+	animation: 25s scroll infinite linear;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+@keyframes scroll {
+	0% {
+		background-position: 0px 0px;
+	}
+
+	100% {
+		background-position: 0px 412px;
+	}
+}
+
+.color {
+	&-1 { background-color: $color-1; }
+	&-2 { background-color: $color-2; }
+	&-3 { background-color: $color-3; }
+	&-4 { background-color: $color-4; }
+	&-5 { background-color: $color-5; }
+	&-text-1 { color: $color-1; }
+	&-text-2 { color: $color-2; }
+	&-text-3 { color: $color-3; }
+	&-text-4 { color: $color-4; }
+	&-text-5 { color: $color-5; }
 }

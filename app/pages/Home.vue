@@ -1,3 +1,7 @@
 <template>
-	<div>hello world</div>
+	<div class="container">
+	</div>
 </template>
+
+<style lang="scss" scoped>
+</style>

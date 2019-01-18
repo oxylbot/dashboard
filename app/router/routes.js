@@ -1,7 +1,5 @@
-export default {
-	home: {
-		name: "Home",
-		path: "/",
-		component: () => import("../pages/Home.vue")
-	}
-};
+export default [{
+	name: "Home",
+	path: "/",
+	component: () => import("../pages/Home.vue")
+}];

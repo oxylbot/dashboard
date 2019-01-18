@@ -1,8 +1,6 @@
 <html lang="en">
 	<head>
 		<title>Oxyl Dashboard</title>
-		<link rel="stylesheet" href="{{css}}" />
-		<link rel="shortcut icon" href="/assets/favicon.ico" />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta charset="UTF-8" />
@@ -15,11 +13,11 @@
 		<meta property="og:locale" content="en_US" />
 	</head>
 	<body>
+		<div class="background"></div>
 		<div id="app">
-			<div id="main-view" class="container-fluid text-light">
+			<div id="main-view" class="container-fluid">
 				<router-view class="mt-4"></router-view>
 			</div>
 		</div>
-		<script src="{{js}}"></script>
 	</body>
 </html>

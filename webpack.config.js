@@ -1,3 +1,5 @@
+const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const { VueLoaderPlugin } = require("vue-loader");
@@ -55,10 +57,22 @@ const config = {
 			use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
 		}, {
 			test: /\.(woff|woff2|eot|ttf|otf|png|svg|jpe?g|gif)$/,
-			loader: "file-loader"
+			loader: "file-loader",
+			options: {
+				name: development ? "[path][name].[ext]" : "[hash].[ext]"
+			}
 		}]
 	},
 	plugins: [
+		new FaviconsWebpackPlugin({
+			logo: path.resolve(__dirname, "app", "assets", "favicon.png"),
+			emitStats: false,
+			inject: true
+		}),
+		new HtmlWebpackPlugin({
+			filename: "app.html",
+			template: path.resolve(__dirname, "app", "index.html")
+		}),
 		new webpack.DefinePlugin({ "process.env": { NODE_ENV: `'${process.env.NODE_ENV}'` } }),
 		new MiniCssExtractPlugin({
 			chunkFilename: development ? "[id].css" : "[id].[chunkhash].css",
