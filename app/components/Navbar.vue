@@ -1,5 +1,5 @@
 <template>
-	<nav class="navbar navbar-dark navbar-expand-md">
+	<nav class="navbar navbar-dark navbar-expand-md" v-scroll-reveal="{ origin: 'left', distance: '25%', duration: 500 }">
 		<router-link class="navbar-brand" :to="{ name: 'home' }">
 			<img src="../assets/nav-brand.png" height="25px" alt="" />
 		</router-link>

@@ -8,6 +8,10 @@ body {
 	color: $color-text;
 }
 
+.scroll-reveal {
+	visibility: hidden;
+}
+
 .background {
 	overflow: hidden;
 	height: 100%;
