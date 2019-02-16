@@ -32,7 +32,7 @@
 						Commands
 					</router-link>
 				</li>
-				<li class="nav-item" :class="{ active: $route.name === 'dashboard' }">
+				<li class="nav-item" :class="{ active: $route.name === 'dashboard', params: { id: null } }">
 					<router-link class="nav-link" :to="{ name: 'dashboard' }">
 						<font-awesome-icon icon="cogs" />
 						Dashboard
