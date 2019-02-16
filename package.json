@@ -28,14 +28,14 @@
     "superagent": "^4.1.0"
   },
   "devDependencies": {
-    "@babel/core": "7.2.2",
+    "@babel/core": "7.3.3",
     "babel-loader": "8.0.5",
     "babel-plugin-syntax-dynamic-import": "6.18.0",
     "babel-polyfill": "6.26.0",
     "babel-preset-env": "1.7.0",
     "bootstrap": "4.3.1",
     "css-loader": "2.1.0",
-    "eslint": "5.13.0",
+    "eslint": "5.14.0",
     "eslint-config-recommended": "4.0.0",
     "eslint-plugin-html": "5.0.3",
     "eslint-plugin-import": "2.16.0",
