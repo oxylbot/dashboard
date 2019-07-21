@@ -38,7 +38,7 @@
     "eslint": "5.16.0",
     "eslint-config-recommended": "4.0.0",
     "eslint-plugin-html": "6.0.0",
-    "eslint-plugin-import": "2.16.0",
+    "eslint-plugin-import": "2.18.2",
     "eslint-plugin-vue": "5.2.2",
     "favicons-webpack-plugin": "0.0.9",
     "file-loader": "4.1.0",
