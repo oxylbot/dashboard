@@ -34,7 +34,7 @@
     "babel-polyfill": "6.26.0",
     "babel-preset-env": "1.7.0",
     "bootstrap": "4.4.1",
-    "css-loader": "3.2.1",
+    "css-loader": "3.3.0",
     "eslint": "6.7.1",
     "eslint-config-recommended": "4.0.0",
     "eslint-plugin-html": "6.0.0",
