@@ -28,8 +28,8 @@
     "superagent": "^5.0.5"
   },
   "devDependencies": {
-    "@babel/core": "7.8.7",
-    "babel-loader": "8.0.6",
+    "@babel/core": "7.9.0",
+    "babel-loader": "8.1.0",
     "babel-plugin-syntax-dynamic-import": "6.18.0",
     "babel-polyfill": "6.26.0",
     "babel-preset-env": "1.7.0",
