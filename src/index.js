@@ -1,5 +1,3 @@
-try { require("dotenv").config(); } catch(err) { } // eslint-disable-line no-empty
-
 const api = require("./api/index");
 const express = require("express");
 const path = require("path");

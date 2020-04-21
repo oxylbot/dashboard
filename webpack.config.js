@@ -1,5 +1,3 @@
-try { require("dotenv").config(); } catch(err) { } // eslint-disable-line no-empty
-
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
