@@ -10,4 +10,6 @@ RUN npm install
 
 RUN NODE_ENV=production npm run bundle
 
+RUN npm prune --production
+
 CMD ["node", "."]
