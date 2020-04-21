@@ -22,7 +22,7 @@ module.exports = settings => (req, res, next) => {
 
 		if(!Array.isArray(types)) types = [types];
 
-		if(toVerify.hasOwnProperty(field)) {
+		if(Object.prototype.hasOwnProperty.call(toVerify, field)) {
 			fieldsPresent++;
 		} else if(defaultValue) {
 			value = defaultValue;

@@ -29,7 +29,7 @@ export default {
 	},
 	actions: {
 		sync: async ({ commit, state }, id) => {
-			if(!state.hasOwnProperty(id)) {
+			if(!Object.prototype.hasOwnProperty.call(state, id)) {
 				try {
 					const { body: guild } = await apiRequest({ path: `settings/${id}` });
 

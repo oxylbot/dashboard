@@ -2,7 +2,6 @@ const express = require("express");
 const fs = require("fs");
 const path = require("path");
 const ratelimit = require("../middleware/ratelimits");
-const verify = require("../middleware/verify");
 
 const router = express.Router(); // eslint-disable-line new-cap
 const commands = {};
@@ -21,9 +20,9 @@ fs.readdirSync(commandFilesDir).forEach(category => {
 });
 
 router.get("/:category/:command", ratelimit({ max: 5, window: 3000 }), async (req, res) => {
-	if(!commands.hasOwnProperty(req.params.category)) {
+	if(!Object.prototype.hasOwnProperty.call(commands, req.params.category)) {
 		res.status(404).json({ error: "Category not found" });
-	} else if(!commands[req.query.category].hasOwnProperty(req.params.command)) {
+	} else if(!Object.prototype.hasOwnProperty.call(commands[req.query.category], req.params.command)) {
 		res.status(404).json({ error: "Command not found in category" });
 	} else {
 		const file = await fs.promises.readFile(commands[req.query.category][req.query.command], "utf8");
