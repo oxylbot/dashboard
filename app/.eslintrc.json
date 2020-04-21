@@ -8,8 +8,7 @@
 		"browser": true
 	},
 	"globals": {
-		"app": false,
-		"apiCall": false
+		"app": false
 	},
 	"parserOptions": {
 		"parser": "babel-eslint",

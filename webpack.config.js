@@ -1,3 +1,5 @@
+try { require("dotenv").config(); } catch(err) { } // eslint-disable-line no-empty
+
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -40,7 +42,7 @@ const config = {
 			use: {
 				loader: "babel-loader",
 				options: {
-					presets: ["env"],
+					presets: ["@babel/preset-env"],
 					plugins: ["syntax-dynamic-import"],
 					comments: false
 				}
@@ -73,7 +75,12 @@ const config = {
 			filename: "app.html",
 			template: path.resolve(__dirname, "app", "index.html")
 		}),
-		new webpack.DefinePlugin({ "process.env": { NODE_ENV: `'${process.env.NODE_ENV}'` } }),
+		new webpack.DefinePlugin({
+			"process.env": {
+				NODE_ENV: `"${process.env.NODE_ENV}"`,
+				BOT_ID: `"${process.env.BOT_ID}"`
+			}
+		}),
 		new MiniCssExtractPlugin({
 			chunkFilename: development ? "[id].css" : "[id].[chunkhash].css",
 			filename: development ? "app.css" : "app.[chunkhash].css"

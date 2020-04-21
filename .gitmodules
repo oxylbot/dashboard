@@ -1,0 +1,3 @@
+[submodule "command-md-files"]
+	path = command-md-files
+	url = https://github.com/oxylbot/command-md-files

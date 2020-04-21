@@ -67,7 +67,7 @@
 	color: $color-text;
 
 	&:hover {
-		background-color: lighten($color-secondary, 10);
+		background-color: lighten($color-secondary, 5);
 	}
 }
 </style>
