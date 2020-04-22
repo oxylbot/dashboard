@@ -25,7 +25,7 @@ app.get("*", (req, res) => {
 	res.status(200).sendFile(path.resolve(__dirname, "..", "build", "app.html"));
 });
 
-app.listen(process.env.DASHBOARD_SERVICE_PORT, isDevelopment ? "127.0.0.1" : "0.0.0.0");
+app.listen(process.env.DASHBOARD_SERVICE_PORT);
 
 process.on("unhandledRejection", err => {
 	console.error(err.stack);
