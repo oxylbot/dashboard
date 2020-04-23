@@ -32,7 +32,7 @@ export default store => [{
 	path: "/invite",
 	beforeEnter(to, from, next) {
 		const redirect = {
-			development: "http://localhost/",
+			development: "https://alpha.oxyl.org/",
 			staging: "https://beta.oxyl.org/",
 			production: "https://oxyl.org/"
 		}[process.env.NODE_ENV];
@@ -46,14 +46,14 @@ export default store => [{
 	path: "/login",
 	beforeEnter(to, from, next) {
 		const redirect = {
-			development: "http://localhost/",
+			development: "https://alpha.oxyl.org/",
 			staging: "https://beta.oxyl.org/",
 			production: "https://oxyl.org/"
 		}[process.env.NODE_ENV];
 
 		let login = `https://discordapp.com/api/oauth2/authorize?client_id=${store.state.client.id}` +
-				`&permissions=288418870&redirect_uri=${encodeURIComponent(redirect)}` +
-				"&response_type=code&scope=identify%20guilds";
+			`&permissions=288418870&redirect_uri=${encodeURIComponent(redirect)}` +
+			"&response_type=code&scope=identify%20guilds";
 
 		if(from.name !== null) login += `&state=${encodeURIComponent(from.path)}`;
 
