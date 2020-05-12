@@ -34,7 +34,7 @@
     "babel-plugin-syntax-dynamic-import": "6.18.0",
     "babel-polyfill": "6.26.0",
     "babel-preset-env": "1.7.0",
-    "bootstrap": "4.4.1",
+    "bootstrap": "4.5.0",
     "bootstrap.native": "2.0.27",
     "css-loader": "3.5.3",
     "eslint": "7.0.0",
