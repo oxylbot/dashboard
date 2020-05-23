@@ -27,9 +27,9 @@ async function generateUserToken(code) {
 				grant_type: "authorization_code",
 				code: code,
 				redirect_uri: {
-					development: "https://alpha.oxyl.org/",
-					staging: "https://beta.oxyl.org/",
-					production: "https://oxyl.org/"
+					development: "https://alpha.oxylbot.com/",
+					staging: "https://beta.oxylbot.com/",
+					production: "https://oxylbot.com/"
 				}[process.env.NODE_ENV]
 			});
 
@@ -69,9 +69,9 @@ async function getAccessToken(userToken) {
 					grant_type: "refresh_token",
 					refresh_token: token.refreshToken,
 					redirect_uri: {
-						development: "https://alpha.oxyl.org/",
-						staging: "https://beta.oxyl.org/",
-						production: "https://oxyl.org/"
+						development: "https://alpha.oxylbot.com/",
+						staging: "https://beta.oxylbot.com/",
+						production: "https://oxylbot.com/"
 					}[process.env.NODE_ENV]
 				});
 

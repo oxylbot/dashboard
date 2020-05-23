@@ -32,9 +32,9 @@ export default store => [{
 	path: "/invite",
 	beforeEnter(to, from, next) {
 		const redirect = {
-			development: "https://alpha.oxyl.org/",
-			staging: "https://beta.oxyl.org/",
-			production: "https://oxyl.org/"
+			development: "https://alpha.oxylbot.com/",
+			staging: "https://beta.oxylbot.com/",
+			production: "https://oxylbot.com/"
 		}[process.env.NODE_ENV];
 
 		window.location.href = `https://discordapp.com/api/oauth2/authorize?client_id=${store.state.client.id}` +
@@ -46,9 +46,9 @@ export default store => [{
 	path: "/login",
 	beforeEnter(to, from, next) {
 		const redirect = {
-			development: "https://alpha.oxyl.org/",
-			staging: "https://beta.oxyl.org/",
-			production: "https://oxyl.org/"
+			development: "https://alpha.oxylbot.com/",
+			staging: "https://beta.oxylbot.com/",
+			production: "https://oxylbot.com/"
 		}[process.env.NODE_ENV];
 
 		let login = `https://discordapp.com/api/oauth2/authorize?client_id=${store.state.client.id}` +
