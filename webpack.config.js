@@ -59,6 +59,7 @@ const config = {
 			test: /\.(woff|woff2|eot|ttf|otf|png|svg|jpe?g|gif)$/,
 			loader: "file-loader",
 			options: {
+				esModule: false,
 				name: development ? "[path][name].[ext]" : "[hash].[ext]"
 			}
 		}]
