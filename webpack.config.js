@@ -76,8 +76,7 @@ const config = {
 		}),
 		new webpack.DefinePlugin({
 			"process.env": {
-				NODE_ENV: `"${process.env.NODE_ENV}"`,
-				BOT_ID: `"${process.env.BOT_ID}"`
+				NODE_ENV: `"${process.env.NODE_ENV}"`
 			}
 		}),
 		new MiniCssExtractPlugin({

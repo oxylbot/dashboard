@@ -5,6 +5,13 @@ const verify = require("../middleware/verify");
 
 const router = express.Router(); // eslint-disable-line new-cap
 
+router.get("/info", ratelimit({ max: 1, window: 1000 }), (req, res) => {
+	res.status(200).json({
+		clientId: process.env.BOT_ID,
+		redirectURI: process.env.DASHBOARD_URL
+	});
+});
+
 router.post("/token", ratelimit({ max: 2, window: 60000 }), verify({
 	type: "body",
 	fields: {

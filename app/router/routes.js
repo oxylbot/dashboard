@@ -31,28 +31,16 @@ export default store => [{
 	name: "invite",
 	path: "/invite",
 	beforeEnter(to, from, next) {
-		const redirect = {
-			development: "https://alpha.oxylbot.com/",
-			staging: "https://beta.oxylbot.com/",
-			production: "https://oxylbot.com/"
-		}[process.env.NODE_ENV];
-
 		window.location.href = `https://discordapp.com/api/oauth2/authorize?client_id=${store.state.client.id}` +
-			`&permissions=288418870&redirect_uri=${encodeURIComponent(redirect)}` +
+			`&permissions=288418870&redirect_uri=${encodeURIComponent(store.state.client.redirectURI)}` +
 			"&response_type=code&scope=bot%20identify%20guilds";
 	}
 }, {
 	name: "login",
 	path: "/login",
 	beforeEnter(to, from, next) {
-		const redirect = {
-			development: "https://alpha.oxylbot.com/",
-			staging: "https://beta.oxylbot.com/",
-			production: "https://oxylbot.com/"
-		}[process.env.NODE_ENV];
-
 		let login = `https://discordapp.com/api/oauth2/authorize?client_id=${store.state.client.id}` +
-			`&permissions=288418870&redirect_uri=${encodeURIComponent(redirect)}` +
+			`&permissions=288418870&redirect_uri=${encodeURIComponent(store.state.client.redirectURI)}` +
 			"&response_type=code&scope=identify%20guilds";
 
 		if(from.name !== null) login += `&state=${encodeURIComponent(from.path)}`;

@@ -26,11 +26,7 @@ async function generateUserToken(code) {
 				client_secret: process.env.SECRET,
 				grant_type: "authorization_code",
 				code: code,
-				redirect_uri: {
-					development: "https://alpha.oxylbot.com/",
-					staging: "https://beta.oxylbot.com/",
-					production: "https://oxylbot.com/"
-				}[process.env.NODE_ENV]
+				redirect_uri: process.env.DASHBOARD_URL
 			});
 
 		const userToken = crypto.randomBytes(12).toString("hex");
@@ -68,11 +64,7 @@ async function getAccessToken(userToken) {
 					client_secret: process.env.SECRET,
 					grant_type: "refresh_token",
 					refresh_token: token.refreshToken,
-					redirect_uri: {
-						development: "https://alpha.oxylbot.com/",
-						staging: "https://beta.oxylbot.com/",
-						production: "https://oxylbot.com/"
-					}[process.env.NODE_ENV]
+					redirect_uri: process.env.DASHBOARD_URL
 				});
 
 			redis.set(userToken, JSON.stringify({
