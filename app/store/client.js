@@ -24,7 +24,7 @@ export default {
 		async sync({ commit, state }) {
 			if(!state.synced) {
 				const { body: commands } = await apiRequest({ path: "commands" });
-				const { body: oauth2Info } = await apiRequest({ path: "ouath2/info" });
+				const { body: oauth2Info } = await apiRequest({ path: "oauth2/info" });
 
 				commit("setCommands", commands);
 				commit("setOAuth2Info", oauth2Info);
