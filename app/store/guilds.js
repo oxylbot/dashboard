@@ -28,10 +28,15 @@ export default {
 		}
 	},
 	actions: {
-		sync: async ({ commit, state }, id) => {
+		sync: async ({ commit, state, rootState }, id) => {
 			if(!Object.prototype.hasOwnProperty.call(state, id)) {
 				try {
-					const { body: guild } = await apiRequest({ path: `settings/${id}` });
+					const { body: guild } = await apiRequest({
+						path: `settings/${id}`,
+						headers: {
+							Authorization: rootState.account.token
+						}
+					});
 
 					commit("add", guild);
 				} catch(err) {
