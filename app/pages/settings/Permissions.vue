@@ -19,7 +19,7 @@
 import apiRequest from "../../apiRequest";
 import { createNamespacedHelpers } from "vuex";
 
-const { mapGetters } = createNamespacedHelpers("account");
+const { mapState: mapAccountState } = createNamespacedHelpers("account");
 const { mapState: mapGuildsState } = createNamespacedHelpers("guilds");
 const { mapState: mapClientState } = createNamespacedHelpers("client");
 
@@ -30,7 +30,7 @@ export default {
 		};
 	},
 	computed: {
-		...mapGetters({
+		...mapAccountState({
 			authToken: "token"
 		}),
 		...mapGuildsState({
@@ -49,7 +49,7 @@ export default {
 			let method = "PUT";
 			const rolePermissions = this.guild.settings.permissions[this.role] || {};
 
-			if(!rolePermissions.hasOwnProperty("enabledCommands")) {
+			if(!Object.prototype.hasOwnProperty.call(rolePermissions, "enabledCommands")) {
 				method = "POST";
 				rolePermissions.enabledCommands = [];
 				rolePermissions.disabledCommands = [];

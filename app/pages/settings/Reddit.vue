@@ -73,8 +73,8 @@ import apiRequest from "../../apiRequest";
 import { createNamespacedHelpers } from "vuex";
 import { Modal } from "bootstrap.native/dist/bootstrap-native-v4";
 
-const { mapGetters } = createNamespacedHelpers("account");
-const { mapState } = createNamespacedHelpers("guilds");
+const { mapState: mapAccountState } = createNamespacedHelpers("account");
+const { mapState: mapGuildsState } = createNamespacedHelpers("guilds");
 
 export default {
 	data() {
@@ -84,10 +84,10 @@ export default {
 		};
 	},
 	computed: {
-		...mapGetters({
+		...mapAccountState({
 			authToken: "token"
 		}),
-		...mapState({
+		...mapGuildsState({
 			guild(state) {
 				return state[this.$route.params.id];
 			}

@@ -65,7 +65,7 @@
 import { Collapse, Dropdown } from "bootstrap.native/dist/bootstrap-native-v4";
 import { createNamespacedHelpers } from "vuex";
 
-const { mapGetters } = createNamespacedHelpers("account");
+const { mapGetters, mapState } = createNamespacedHelpers("account");
 
 export default {
 	data() {
@@ -82,7 +82,9 @@ export default {
 	},
 	computed: {
 		...mapGetters({
-			accountAvatar: "avatar",
+			accountAvatar: "avatar"
+		}),
+		...mapState({
 			accountUsername: "username",
 			loggedIn: state => state.token !== null,
 			guilds: state => state.guilds.filter(guild => guild.owner || guild.permissions & 32)
