@@ -74,12 +74,6 @@
 										Twitch
 									</router-link>
 								</li>
-								<li class="nav-item">
-									<router-link class="nav-link" :class="{ active: $route.name === 'settings.userlog' }" :to="{ name: 'settings.userlog', params: { id: $route.params.id } }">
-										<font-awesome-icon icon="user-plus"></font-awesome-icon>
-										User Log
-									</router-link>
-								</li>
 							</ul>
 						</div>
 						<div class="col-md-9 col-sm-12 py-3">

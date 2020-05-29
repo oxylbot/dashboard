@@ -15,7 +15,6 @@ const reddit = require("./reddit");
 const roles = require("./roles");
 const suggestions = require("./suggestions");
 const twitch = require("./twitch");
-const userLog = require("./userLog");
 
 router.use("/:id", async (req, res, next) => {
 	const auth = req.get("authorization");
@@ -51,7 +50,6 @@ router.use("/:guildId(\d)/reddit", reddit());
 router.use("/:guildId(\d)/roles", roles());
 router.use("/:guildId(\d)/suggestions", suggestions());
 router.use("/:guildId(\d)/twitch", twitch());
-router.use("/:guildId(\d)/user-log", userLog());
 
 
 router.get("/:id(\d)", ratelimit({ max: 3, window: 5000 }), async (req, res) => {
@@ -73,7 +71,6 @@ router.get("/:id(\d)", ratelimit({ max: 3, window: 5000 }), async (req, res) => 
 	// 		{ type: 0, name: "general", id: "254770965018443776" },
 	// 		{ type: 0, name: "announcements", id: "254771761646665728" },
 	// 		{ type: 0, name: "server-log", id: "265998475831934977" },
-	// 		{ type: 0, name: "user-log", id: "267851297225441290" },
 	// 		{ type: 0, name: "updates", id: "270576454117359617" },
 	// 		{ type: 0, name: "mod-log", id: "271790945383481354" },
 	// 		{ type: 2, name: "♫♪ (96kbps)", id: "286653410139176961" },
@@ -163,13 +160,7 @@ router.get("/:id(\d)", ratelimit({ max: 3, window: 5000 }), async (req, res) => 
 	// 			id: 124128342,
 	// 			channelName: "biinny",
 	// 			discordChannel: "441396938718314507"
-	// 		}],
-	// 		userlog: {
-	// 			enabled: false,
-	// 			channel: "267851297225441290",
-	// 			joinMessage: "Welcome {{mention}} to the server",
-	// 			leaveMessage: null
-	// 		}
+	// 		}]
 	// 	}
 	// };
 

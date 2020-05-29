@@ -123,10 +123,6 @@ export default store => [{
 		name: "settings.twitch",
 		path: "twitch",
 		component: () => import("../pages/settings/Twitch.vue")
-	}, {
-		name: "settings.userlog",
-		path: "userlog",
-		component: () => import("../pages/settings/UserLog.vue")
 	}]
 }, {
 	name: "404",
