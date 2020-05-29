@@ -24,8 +24,8 @@
     "superagent": "^5.2.2"
   },
   "devDependencies": {
-    "@babel/core": "7.9.6",
-    "@babel/preset-env": "7.9.6",
+    "@babel/core": "7.10.1",
+    "@babel/preset-env": "7.10.1",
     "@fortawesome/fontawesome-svg-core": "1.2.28",
     "@fortawesome/free-brands-svg-icons": "5.13.0",
     "@fortawesome/free-solid-svg-icons": "5.13.0",
@@ -55,7 +55,7 @@
     "vue": "2.6.11",
     "vue-eslint-parser": "7.1.0",
     "vue-loader": "15.9.2",
-    "vue-router": "3.2.0",
+    "vue-router": "3.3.1",
     "vue-scroll-reveal": "1.0.11",
     "vue-template-compiler": "2.6.11",
     "vuex": "3.4.0",
