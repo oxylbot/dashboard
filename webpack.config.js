@@ -65,11 +65,6 @@ const config = {
 		}]
 	},
 	plugins: [
-		new FaviconsWebpackPlugin({
-			logo: path.resolve(__dirname, "app", "assets", "favicon.png"),
-			emitStats: false,
-			inject: true
-		}),
 		new HtmlWebpackPlugin({
 			filename: "app.html",
 			template: path.resolve(__dirname, "app", "index.html")
@@ -78,6 +73,11 @@ const config = {
 			"process.env": {
 				NODE_ENV: `"${process.env.NODE_ENV}"`
 			}
+		}),
+		new FaviconsWebpackPlugin({
+			logo: path.resolve(__dirname, "app", "assets", "favicon.png"),
+			emitStats: false,
+			inject: true
 		}),
 		new MiniCssExtractPlugin({
 			chunkFilename: development ? "[id].css" : "[id].[chunkhash].css",
