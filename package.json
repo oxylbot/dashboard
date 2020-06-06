@@ -1,6 +1,6 @@
 {
   "name": "dashboard",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "oxyl dashboard",
   "main": "src/index.js",
   "scripts": {
@@ -20,7 +20,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "ioredis": "^4.17.3",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.1",
     "superagent": "^5.2.2"
   },
   "devDependencies": {
