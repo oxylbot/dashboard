@@ -145,7 +145,10 @@
 			"error",
 			"tab",
 			{
-				"SwitchCase": 1
+				"SwitchCase": 1,
+				"ignoredNodes": [
+					"TemplateLiteral"
+				]
 			}
 		],
 		"key-spacing": "error",

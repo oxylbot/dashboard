@@ -17,6 +17,6 @@ export default Vue => {
 		class: "scroll-reveal"
 	});
 
-	["Navbar", "ChannelSelector", "RoleSelector", "Duration"]
+	["ChannelSelector", "Duration", "Navbar", "RoleSelector"]
 		.forEach(file => Vue.component(file.toLowerCase(), () => import(`./${file}.vue`)));
 };
