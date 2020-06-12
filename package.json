@@ -1,6 +1,6 @@
 {
   "name": "dashboard",
-  "version": "6.0.0",
+  "version": "7.0.0",
   "description": "oxyl dashboard",
   "main": "src/index.js",
   "scripts": {
@@ -54,7 +54,7 @@
     "vue": "2.6.11",
     "vue-eslint-parser": "7.1.0",
     "vue-loader": "15.9.2",
-    "vue-router": "3.3.2",
+    "vue-router": "3.3.3",
     "vue-scroll-reveal": "1.0.11",
     "vue-template-compiler": "2.6.11",
     "vuex": "3.4.0",
