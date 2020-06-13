@@ -1,6 +1,6 @@
 {
   "name": "dashboard",
-  "version": "8.0.0",
+  "version": "9.0.0",
   "description": "oxyl dashboard",
   "main": "src/index.js",
   "scripts": {
@@ -35,7 +35,7 @@
     "babel-preset-env": "1.7.0",
     "bootstrap": "4.5.0",
     "bootstrap.native": "2.0.27",
-    "css-loader": "3.5.3",
+    "css-loader": "3.6.0",
     "eslint": "7.2.0",
     "eslint-config-recommended": "4.0.0",
     "eslint-plugin-html": "6.0.2",
