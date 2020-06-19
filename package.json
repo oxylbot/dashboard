@@ -1,6 +1,6 @@
 {
   "name": "dashboard",
-  "version": "13.0.0",
+  "version": "14.0.0",
   "description": "oxyl dashboard",
   "main": "src/index.js",
   "scripts": {
@@ -27,7 +27,7 @@
     "@babel/preset-env": "7.10.2",
     "@fortawesome/fontawesome-svg-core": "1.2.29",
     "@fortawesome/free-brands-svg-icons": "5.13.1",
-    "@fortawesome/free-solid-svg-icons": "5.13.0",
+    "@fortawesome/free-solid-svg-icons": "5.13.1",
     "@fortawesome/vue-fontawesome": "0.1.10",
     "babel-loader": "8.1.0",
     "babel-plugin-syntax-dynamic-import": "6.18.0",
