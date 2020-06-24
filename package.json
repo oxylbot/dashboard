@@ -19,8 +19,10 @@
   "homepage": "https://github.com/oxylbot/dashboard#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "express-winston": "^4.0.3",
     "ioredis": "^4.17.3",
-    "superagent": "^5.2.2"
+    "superagent": "^5.2.2",
+    "winston": "^3.3.3"
   },
   "devDependencies": {
     "@babel/core": "7.10.3",
@@ -34,7 +36,7 @@
     "babel-polyfill": "6.26.0",
     "babel-preset-env": "1.7.0",
     "bootstrap": "4.5.0",
-    "bootstrap.native": "2.0.27",
+    "bootstrap.native": "^3.0.9",
     "css-loader": "3.6.0",
     "eslint": "7.3.1",
     "eslint-config-recommended": "4.0.0",

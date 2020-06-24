@@ -62,8 +62,9 @@
 </template>
 
 <script>
-import { Collapse, Dropdown } from "bootstrap.native/dist/bootstrap-native-v4";
+import Collapse from "bootstrap.native/dist/components/collapse-native.esm";
 import { createNamespacedHelpers } from "vuex";
+import Dropdown from "bootstrap.native/dist/components/dropdown-native.esm";
 
 const { mapGetters, mapState } = createNamespacedHelpers("account");
 

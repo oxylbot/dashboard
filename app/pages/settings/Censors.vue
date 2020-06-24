@@ -88,7 +88,7 @@
 <script>
 import apiRequest from "../../apiRequest";
 import { createNamespacedHelpers } from "vuex";
-import { Modal } from "bootstrap.native/dist/bootstrap-native-v4";
+import Modal from "bootstrap.native/dist/components/modal-native.esm";
 
 const { mapState: mapAccountState } = createNamespacedHelpers("account");
 const { mapState: mapGuildsState } = createNamespacedHelpers("guilds");

@@ -32,7 +32,7 @@
 
 <script>
 import apiRequest from "../apiRequest";
-import { Collapse } from "bootstrap.native/dist/bootstrap-native-v4";
+import Collapse from "bootstrap.native/dist/components/collapse-native.esm";
 import { createNamespacedHelpers } from "vuex";
 
 const { mapState } = createNamespacedHelpers("client");

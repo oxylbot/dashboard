@@ -117,7 +117,7 @@ div.main {
 
 
 <script>
-import { Dropdown } from "bootstrap.native/dist/bootstrap-native-v4";
+import Dropdown from "bootstrap.native/dist/components/dropdown-native.esm";
 
 export default {
 	data() {
