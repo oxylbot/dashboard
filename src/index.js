@@ -1,5 +1,7 @@
 const api = require("./api/index");
 const express = require("express");
+const expressWinston = require("express-winston");
+const logger = require("./logger");
 const path = require("path");
 
 const app = express();
@@ -14,6 +16,7 @@ app.disable("x-powered-by");
 app.set("env", process.env.NODE_ENV);
 
 app.use(express.json());
+app.use(expressWinston.logger({ winstonInstance: logger }));
 app.use(express.static(
 	path.resolve(__dirname, "..", "build"),
 	{ maxAge: isDevelopment ? 0 : 31536000000 }
@@ -25,7 +28,10 @@ app.get("*", (req, res) => {
 	res.status(200).sendFile(path.resolve(__dirname, "..", "build", "app.html"));
 });
 
-app.listen(process.env.DASHBOARD_SERVICE_PORT);
+app.use(expressWinston.errorLogger({ winstonInstance: logger }));
+app.listen(process.env.DASHBOARD_SERVICE_PORT, () => {
+	logger.info(`REST API listening on port ${process.env.DASHBOARD_SERVICE_PORT}`);
+});
 
 process.on("unhandledRejection", err => {
 	console.error(err.stack);

@@ -53,7 +53,7 @@
 					<div class="dropdown-menu dropdown-menu-right">
 						<router-link class="dropdown-item" v-for="guild in guilds" :key="guild.id" :to="{ name: 'settings', params: { id: guild.id } }">{{guild.name}}</router-link>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" :to="{ name: 'logout' }">Logout</a>
+						<router-link class="dropdown-item" :to="{ name: 'logout' }">Logout</router-link>
 					</div>
 				</div>
 			</div>
