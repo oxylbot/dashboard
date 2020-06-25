@@ -87,7 +87,7 @@ export default {
 		}),
 		...mapState({
 			accountUsername: "username",
-			loggedIn: state => state.token !== null,
+			loggedIn: state => state.token !== null && state.synced,
 			guilds: state => state.guilds.filter(guild => guild.owner || guild.permissions & 32)
 		})
 	}
