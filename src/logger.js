@@ -1,4 +1,4 @@
-onst { createLogger, format, transports } = require("winston");
+const { createLogger, format, transports } = require("winston");
 const logger = createLogger();
 
 if(process.env.NODE_ENV === "development") {
