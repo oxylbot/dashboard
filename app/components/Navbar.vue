@@ -46,10 +46,10 @@
         </li>
       </ul>
       <div class="nav-item" id="account-info">
-        <router-link class="btn rounded-lg" role="button" v-if="!loggedIn" :to="{ name: 'login' }">
-          <font-awesome-icon icon="sign-in-alt"></font-awesome-icon>Login with Discord
+        <router-link class="btn rounded-lg" role="button" v-show="!loggedIn" :to="{ name: 'login' }">
+          <font-awesome-icon icon="sign-in-alt"></font-awesome-icon> Login with Discord
         </router-link>
-        <div class="dropdown" v-else>
+        <div class="dropdown" v-show="loggedIn">
           <button
             class="btn dropdown-toggle rounded-lg text-small"
             role="button"
@@ -92,25 +92,11 @@ export default {
 			dropdown: null
 		};
 	},
-	methods: {
-		createDropdown() {
-			const accountDropdown = this.$refs.accountDropdown;
-
-			if(accountDropdown && !this.dropdown) { this.dropdown = new Dropdown(accountDropdown); }
-		}
-	},
 	async mounted() {
 		await this.$nextTick();
 
-		this.createDropdown();
 		this.collapse = new Collapse(this.$refs.navbarToggle);
-	},
-	watch: {
-		loggedIn(newValue) {
-			if(newValue === true) {
-				this.createDropdown();
-			}
-		}
+		this.dropdown = new Dropdown(this.$refs.accountDropdown);
 	},
 	computed: {
 		...mapGetters({
