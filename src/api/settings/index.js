@@ -16,7 +16,7 @@ const roles = require("./roles");
 const suggestions = require("./suggestions");
 const twitch = require("./twitch");
 
-router.use("/:id", async (req, res, next) => {
+router.use("/:id(\d+)", async (req, res, next) => {
 	const auth = req.get("authorization");
 	if(!auth) return res.status(401).json({ error: "No Authorization header" });
 
@@ -40,19 +40,19 @@ router.use("/:id", async (req, res, next) => {
 	}
 });
 
-router.use("/:guildId(\d)/censors", censors());
-router.use("/:guildId(\d)/channels", channels());
-router.use("/:guildId(\d)/mod-log", modLog());
-router.use("/:guildId(\d)/music", music());
-router.use("/:guildId(\d)/permissions", permissions());
-router.use("/:guildId(\d)/prefix", prefix());
-router.use("/:guildId(\d)/reddit", reddit());
-router.use("/:guildId(\d)/roles", roles());
-router.use("/:guildId(\d)/suggestions", suggestions());
-router.use("/:guildId(\d)/twitch", twitch());
+router.use("/:guildId(\d+)/censors", censors());
+router.use("/:guildId(\d+)/channels", channels());
+router.use("/:guildId(\d+)/mod-log", modLog());
+router.use("/:guildId(\d+)/music", music());
+router.use("/:guildId(\d+)/permissions", permissions());
+router.use("/:guildId(\d+)/prefix", prefix());
+router.use("/:guildId(\d+)/reddit", reddit());
+router.use("/:guildId(\d+)/roles", roles());
+router.use("/:guildId(\d+)/suggestions", suggestions());
+router.use("/:guildId(\d+)/twitch", twitch());
 
 
-router.get("/:id(\d)", ratelimit({ max: 3, window: 5000 }), async (req, res) => {
+router.get("/:id(\d+)", ratelimit({ max: 3, window: 5000 }), async (req, res) => {
 	const resp = await superagent.get(`${req.app.locals.gatewayBaseURL}/settings/${req.params.id}`)
 		.ok(({ status }) => status < 500);
 
