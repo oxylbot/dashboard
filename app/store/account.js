@@ -95,6 +95,9 @@ export default {
 
 
 			dispatch("sync");
+		},
+		logout({ commit }) {
+			commit("logout");
 		}
 	}
 };

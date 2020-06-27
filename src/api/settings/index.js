@@ -53,7 +53,7 @@ router.use("/:guildId(\d)/twitch", twitch());
 
 
 router.get("/:id(\d)", ratelimit({ max: 3, window: 5000 }), async (req, res) => {
-	const resp = await superagent.get(`${req.app.locals.gatewayBaseURL}/settings`)
+	const resp = await superagent.get(`${req.app.locals.gatewayBaseURL}/settings/${req.params.id}`)
 		.ok(({ status }) => status < 500);
 
 	if(resp.status === 404) {
