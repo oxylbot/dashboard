@@ -166,12 +166,12 @@ router.get("/:id(\\d+)", ratelimit({ max: 3, window: 5000 }), async (req, res) =
 	// };
 
 	const guild = {
-		id: resp.id,
-		name: resp.name,
-		icon: resp.icon,
-		channels: resp.channels,
-		roles: resp.roles,
-		settings: resp.settings
+		id: resp.body.id,
+		name: resp.body.name,
+		icon: resp.body.icon,
+		channels: resp.body.channels,
+		roles: resp.body.roles,
+		settings: resp.body.settings
 	};
 
 	return res.status(200).json(guild);
