@@ -1,5 +1,5 @@
 const express = require("express");
-const logger = require("./logger");
+const logger = require("../../logger");
 const oauth = require("../../oauth2");
 const ratelimit = require("../../middleware/ratelimits");
 const superagent = require("superagent");
