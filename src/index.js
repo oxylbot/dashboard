@@ -33,7 +33,7 @@ app.listen(process.env.DASHBOARD_SERVICE_PORT, () => {
 	logger.info(`REST API listening on port ${process.env.DASHBOARD_SERVICE_PORT}`);
 });
 
-process.on("unhandledRejection", err => {
-	console.error(err.stack);
+process.on("unhandledRejection", error => {
+	logger.error(error.message, { error });
 	process.exit(1);
 });

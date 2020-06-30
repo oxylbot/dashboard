@@ -165,14 +165,66 @@ router.get("/:id(\\d+)", ratelimit({ max: 3, window: 5000 }), async (req, res) =
 	// 	}
 	// };
 
+	const respSettings = resp.body.settings;
 	const guild = {
 		id: resp.body.id,
 		name: resp.body.name,
 		icon: resp.body.icon,
 		channels: resp.body.channels,
 		roles: resp.body.roles,
-		settings: resp.body.settings
+		settings: {
+			roles: {}
+		}
 	};
+
+	guild.settings.censors = respSettings.censors || [];
+
+	guild.settings.channels = respSettings.channels || { enabled: false, category: null };
+
+	guild.settings.channels = respSettings.modlog || {
+		enabled: false,
+		channel: null,
+		warningDuration: 0,
+		thresholds: []
+	};
+
+	guild.settings.music = respSettings.music || {
+		nowPlaying: true,
+		voteSkip: false,
+		maxLength: 0
+	};
+
+	guild.settings.permissions = respSettings.permissions || {};
+
+	guild.settings.prefix = respSettings.prefix || {
+		custom: "",
+		overwrite: false
+	};
+
+	guild.settings.reddit = respSettings.reddit || [];
+
+	if(respSettings.roles && respSettings.roles.autorole) guild.settings.roles.autorole = respSettings.roles.autorole;
+	else guild.settings.roles.autorole = [];
+
+	if(respSettings.roles && respSettings.roles.roleme) guild.settings.roles.roleme = respSettings.roles.roleme;
+	else guild.settings.roles.roleme = [];
+
+	if(respSettings.roles && respSettings.roles.autorolebot) {
+		guild.settings.roles.autorolebot = respSettings.roles.autorolebot;
+	} else {
+		guild.settings.roles.autorolebot = [];
+	}
+
+	if(respSettings.roles && respSettings.roles.autorole) guild.settings.roles.autorole = respSettings.roles.autorole;
+	else guild.settings.roles.autorole = [];
+
+	guild.settings.suggestions = respSettings.suggestions || {
+		enabled: false,
+		channel: null
+	};
+
+	guild.settings.twitch = respSettings.twitch || [];
+
 
 	return res.status(200).json(guild);
 });
