@@ -53,11 +53,11 @@ router.use("/:guildId(\\d+)/suggestions", suggestions());
 router.use("/:guildId(\\d+)/twitch", twitch());
 
 router.get("/:id(\\d+)", ratelimit({ max: 3, window: 5000 }), async (req, res) => {
-	const resp = await superagent.get(`${req.app.locals.gatewayBaseURL}/settings/${req.params.id}`)
-		.ok(({ status }) => status < 500);
+	const { body, status } = await superagent.get(`${req.app.locals.gatewayBaseURL}/settings/${req.params.id}`)
+		.ok(resp => resp.status < 500);
 
-	logger.debug("Gateway settings response", { body: resp.body });
-	if(resp.status === 404) {
+	logger.debug("Gateway settings response", { body });
+	if(status === 404) {
 		return res.status(404).json({ error: "Oxyl not in guild" });
 	}
 
@@ -165,66 +165,70 @@ router.get("/:id(\\d+)", ratelimit({ max: 3, window: 5000 }), async (req, res) =
 	// 	}
 	// };
 
-	const respSettings = resp.body.settings;
 	const guild = {
-		id: resp.body.id,
-		name: resp.body.name,
-		icon: resp.body.icon,
-		channels: resp.body.channels,
-		roles: resp.body.roles,
+		id: body.id,
+		name: body.name,
+		icon: body.icon,
+		channels: body.channels,
+		roles: body.roles,
 		settings: {
 			roles: {}
 		}
 	};
 
-	guild.settings.censors = respSettings.censors || [];
+	guild.settings.censors = body.settings.censors || [];
 
-	guild.settings.channels = respSettings.channels || { enabled: false, category: null };
+	guild.settings.channels = body.settings.channels || { enabled: false, category: null };
 
-	guild.settings.channels = respSettings.modlog || {
+	guild.settings.channels = body.settings.modlog || {
 		enabled: false,
 		channel: null,
 		warningDuration: 0,
 		thresholds: []
 	};
 
-	guild.settings.music = respSettings.music || {
+	guild.settings.music = body.settings.music || {
 		nowPlaying: true,
 		voteSkip: false,
 		maxLength: 0
 	};
 
-	guild.settings.permissions = respSettings.permissions || {};
+	guild.settings.permissions = body.settings.permissions || {};
 
-	guild.settings.prefix = respSettings.prefix || {
+	guild.settings.prefix = body.settings.prefix || {
 		custom: "",
 		overwrite: false
 	};
 
-	guild.settings.reddit = respSettings.reddit || [];
+	guild.settings.reddit = body.settings.reddit || [];
 
-	if(respSettings.roles && respSettings.roles.autorole) guild.settings.roles.autorole = respSettings.roles.autorole;
-	else guild.settings.roles.autorole = [];
+	if(body.settings.roles && body.settings.roles.autorole) {
+		guild.settings.roles.autorole = body.settings.roles.autorole;
+	} else {
+		guild.settings.roles.autorole = [];
+	}
 
-	if(respSettings.roles && respSettings.roles.roleme) guild.settings.roles.roleme = respSettings.roles.roleme;
+	if(body.settings.roles && body.settings.roles.roleme) guild.settings.roles.roleme = body.settings.roles.roleme;
 	else guild.settings.roles.roleme = [];
 
-	if(respSettings.roles && respSettings.roles.autorolebot) {
-		guild.settings.roles.autorolebot = respSettings.roles.autorolebot;
+	if(body.settings.roles && body.settings.roles.autorolebot) {
+		guild.settings.roles.autorolebot = body.settings.roles.autorolebot;
 	} else {
 		guild.settings.roles.autorolebot = [];
 	}
 
-	if(respSettings.roles && respSettings.roles.autorole) guild.settings.roles.autorole = respSettings.roles.autorole;
-	else guild.settings.roles.autorole = [];
+	if(body.settings.roles && body.settings.roles.autorole) {
+		guild.settings.roles.autorole = body.settings.roles.autorole;
+	} else {
+		guild.settings.roles.autorole = [];
+	}
 
-	guild.settings.suggestions = respSettings.suggestions || {
+	guild.settings.suggestions = body.settings.suggestions || {
 		enabled: false,
 		channel: null
 	};
 
-	guild.settings.twitch = respSettings.twitch || [];
-
+	guild.settings.twitch = body.settings.twitch || [];
 
 	return res.status(200).json(guild);
 });
