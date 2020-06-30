@@ -56,7 +56,7 @@ router.get("/:id(\\d+)", ratelimit({ max: 3, window: 5000 }), async (req, res) =
 	const resp = await superagent.get(`${req.app.locals.gatewayBaseURL}/settings/${req.params.id}`)
 		.ok(({ status }) => status < 500);
 
-	logger.debug("Gateway settings response", { resp });
+	logger.debug("Gateway settings response", { body: resp.body });
 	if(resp.status === 404) {
 		return res.status(404).json({ error: "Oxyl not in guild" });
 	}
