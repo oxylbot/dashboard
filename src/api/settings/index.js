@@ -180,7 +180,7 @@ router.get("/:id(\\d+)", ratelimit({ max: 3, window: 5000 }), async (req, res) =
 
 	guild.settings.channels = body.settings.channels || { enabled: false, category: null };
 
-	guild.settings.channels = body.settings.modlog || {
+	guild.settings.modlog = body.settings.modlog || {
 		enabled: false,
 		channel: null,
 		warningDuration: 0,
