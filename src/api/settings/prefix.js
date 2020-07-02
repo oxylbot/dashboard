@@ -3,7 +3,7 @@ const ratelimit = require("../../middleware/ratelimits");
 const verify = require("../../middleware/verify");
 const superagent = require("superagent");
 
-const router = express.Router({ mergeParams: true })); // eslint-disable-line new-cap
+const router = express.Router({ mergeParams: true }); // eslint-disable-line new-cap
 
 router.put("/", ratelimit({ max: 3, window: 5000 }), verify({
 	type: "body",
