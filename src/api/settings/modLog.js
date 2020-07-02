@@ -13,16 +13,16 @@ router.put("/", ratelimit({ max: 3, window: 5000 }), verify({
 			type: String,
 			optional: true,
 			validate: input => {
-				if(/\d+/.test(input)) throw new Error("Channel ID must be a snowflake");
-				else return true;
+				if(/\d+/.test(input)) return true;
+				else throw new Error("Channel ID must be a snowflake");
 			}
 		},
 		warningDuration: {
 			type: Number,
 			optional: true,
 			validate: input => {
-				if(!Number.isInteger(input)) throw new Error("Warning duration must be an integer");
-				else return true;
+				if(Number.isInteger(input)) return true;
+				else throw new Error("Warning duration must be an integer");
 			}
 		}
 	}
@@ -49,26 +49,26 @@ router.post("/thresholds", ratelimit({ max: 1, window: 5000 }), verify({
 		punishment: {
 			type: String,
 			validate: input => {
-				if(!["mute", "ban", "kick", "softban"].includes(input)) throw new Error("Invalid punishment type");
-				else return true;
+				if(["mute", "ban", "kick", "softban"].includes(input)) return true;
+				else throw new Error("Invalid punishment type");
 			}
 		},
 		duration: {
 			type: Number,
 			optional: true,
 			validate: input => {
-				if(!Number.isInteger(input)) throw new Error("Duration must be an integer");
-				else return true;
+				if(Number.isInteger(input)) return true;
+				else throw new Error("Duration must be an integer");
 			}
 		},
 		whitelistedRoles: {
 			type: Array,
 			default: [],
 			validate: input => {
-				if(!input.every(value => /\d+/.test(value))) {
-					throw new Error("Whitelisted roles must be an array of snowflakes");
-				} else {
+				if(input.every(value => /\d+/.test(value))) {
 					return true;
+				} else {
+					throw new Error("Whitelisted roles must be an array of snowflakes");
 				}
 			}
 		}
@@ -102,26 +102,26 @@ router.patch("/thresholds/:id", ratelimit({ max: 3, window: 5000 }), verify({
 		punishment: {
 			type: String,
 			validate: input => {
-				if(!["mute", "ban", "kick", "softban"].includes(input)) throw new Error("Invalid punishment type");
-				else return true;
+				if(["mute", "ban", "kick", "softban"].includes(input)) return true;
+				else throw new Error("Invalid punishment type");
 			}
 		},
 		duration: {
 			type: Number,
 			optional: true,
 			validate: input => {
-				if(!Number.isInteger(input)) throw new Error("Duration must be an integer");
-				else return true;
+				if(Number.isInteger(input)) return true;
+				else throw new Error("Duration must be an integer");
 			}
 		},
 		whitelistedRoles: {
 			type: Array,
 			default: [],
 			validate: input => {
-				if(!input.every(value => /\d+/.test(value))) {
-					throw new Error("Whitelisted roles must be an array of snowflakes");
-				} else {
+				if(input.every(value => /\d+/.test(value))) {
 					return true;
+				} else {
+					throw new Error("Whitelisted roles must be an array of snowflakes");
 				}
 			}
 		}

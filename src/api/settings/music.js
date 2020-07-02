@@ -14,8 +14,8 @@ router.put("/", ratelimit({ max: 3, window: 5000 }), verify({
 			type: Number,
 			optional: true,
 			validate: input => {
-				if(!Number.isInteger(input)) throw new Error("Max length must be an integer");
-				else return true;
+				if(Number.isInteger(input)) return true;
+				else throw new Error("Max length must be an integer");
 			}
 		}
 	}

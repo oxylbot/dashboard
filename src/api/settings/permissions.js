@@ -12,10 +12,10 @@ router.post("/:id", ratelimit({ max: 1, window: 3000 }), verify({
 			type: Array,
 			default: [],
 			validate: input => {
-				if(!input.every(value => typeof value === "string")) {
-					throw new Error("Enabled commands must be an array of strings");
-				} else {
+				if(input.every(value => typeof value === "string")) {
 					return true;
+				} else {
+					throw new Error("Enabled commands must be an array of strings");
 				}
 			}
 		},
@@ -23,10 +23,10 @@ router.post("/:id", ratelimit({ max: 1, window: 3000 }), verify({
 			type: Array,
 			default: [],
 			validate: input => {
-				if(!input.every(value => typeof value === "string")) {
-					throw new Error("Disabled commands must be an array of strings");
-				} else {
+				if(input.every(value => typeof value === "string")) {
 					return true;
+				} else {
+					throw new Error("Disabled commands must be an array of strings");
 				}
 			}
 		}
@@ -52,10 +52,10 @@ router.put("/:id", ratelimit({ max: 3, window: 2000 }), verify({
 			type: Array,
 			default: [],
 			validate: input => {
-				if(!input.every(value => typeof value === "string")) {
-					throw new Error("Enabled commands must be an array of strings");
-				} else {
+				if(input.every(value => typeof value === "string")) {
 					return true;
+				} else {
+					throw new Error("Enabled commands must be an array of strings");
 				}
 			}
 		},
@@ -63,10 +63,10 @@ router.put("/:id", ratelimit({ max: 3, window: 2000 }), verify({
 			type: Array,
 			default: [],
 			validate: input => {
-				if(!input.every(value => typeof value === "string")) {
-					throw new Error("Disabled commands must be an array of strings");
-				} else {
+				if(input.every(value => typeof value === "string")) {
 					return true;
+				} else {
+					throw new Error("Disabled commands must be an array of strings");
 				}
 			}
 		}

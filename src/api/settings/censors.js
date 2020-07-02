@@ -26,8 +26,8 @@ router.post("/", ratelimit({ max: 1, window: 5000 }), verify({
 			type: Number,
 			optional: true,
 			validate: input => {
-				if(!Number.isInteger(input)) throw new Error("Duration must be an integer");
-				else return true;
+				if(Number.isInteger(input)) return true;
+				else throw new Error("Duration must be an integer");
 			}
 		},
 		regex: String,
@@ -35,10 +35,10 @@ router.post("/", ratelimit({ max: 1, window: 5000 }), verify({
 			type: Array,
 			default: [],
 			validate: input => {
-				if(!input.every(value => /\d+/.test(value))) {
-					throw new Error("Whitelisted roles must be an array of snowflakes");
-				} else {
+				if(input.every(value => /\d+/.test(value))) {
 					return true;
+				} else {
+					throw new Error("Duration must be an integer");
 				}
 			}
 		}
@@ -79,8 +79,8 @@ router.patch("/:id", ratelimit({ max: 3, window: 5000 }), verify({
 		duration: {
 			type: Number,
 			validate: input => {
-				if(!Number.isInteger(input)) throw new Error("Duration must be an integer");
-				else return true;
+				if(Number.isInteger(input)) return true;
+				else throw new Error("Duration must be an integer");
 			}
 		},
 		regex: String,
@@ -88,10 +88,10 @@ router.patch("/:id", ratelimit({ max: 3, window: 5000 }), verify({
 			type: Array,
 			default: [],
 			validate: input => {
-				if(!input.every(value => /\d+/.test(value))) {
-					throw new Error("Whitelisted roles must be an array of snowflakes");
-				} else {
+				if(input.every(value => /\d+/.test(value))) {
 					return true;
+				} else {
+					throw new Error("Whitelisted roles must be an array of snowflakes");
 				}
 			}
 		}

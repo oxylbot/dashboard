@@ -19,8 +19,8 @@ router.post("/", ratelimit({ max: 1, window: 5000 }), verify({
 			type: String,
 			optional: true,
 			validate: input => {
-				if(/\d+/.test(input)) throw new Error("Channel ID must be a snowflake");
-				else return true;
+				if(/\d+/.test(input)) return true;
+				else throw new Error("Channel ID must be a snowflake");
 			}
 		}
 	}
@@ -51,8 +51,8 @@ router.patch("/:id", ratelimit({ max: 3, window: 5000 }), verify({
 			type: String,
 			optional: true,
 			validate: input => {
-				if(/\d+/.test(input)) throw new Error("Channel ID must be a snowflake");
-				else return true;
+				if(/\d+/.test(input)) return true;
+				else throw new Error("Channel ID must be a snowflake");
 			}
 		}
 	}

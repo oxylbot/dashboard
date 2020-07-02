@@ -70,8 +70,8 @@ module.exports = settings => (req, res, next) => {
 		if(validate) {
 			try {
 				validate(value);
-			} catch(err) {
-				errors.push(err.msg);
+			} catch(error) {
+				errors.push(error.message);
 				continue;
 			}
 		}

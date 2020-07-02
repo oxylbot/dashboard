@@ -13,8 +13,8 @@ router.put("/", ratelimit({ max: 3, window: 5000 }), verify({
 			type: String,
 			optional: true,
 			validate: input => {
-				if(/\d+/.test(input)) throw new Error("Category ID must be a snowflake");
-				else return true;
+				if(/\d+/.test(input)) return true;
+				else throw new Error("Category ID must be a snowflake");
 			}
 		}
 	}

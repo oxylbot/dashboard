@@ -12,7 +12,7 @@ router.put("/roleme", ratelimit({ max: 3, window: 5000 }), verify({
 			type: Array,
 			default: [],
 			validate: input => {
-				if(!input.every(value => /\d+/.test(value))) {
+				if(input.every(value => /\d+/.test(value))) {
 					throw new Error("Roles must be an array of snowflakes");
 				} else {
 					return true;
@@ -36,10 +36,10 @@ router.put("/autorole", ratelimit({ max: 3, window: 5000 }), verify({
 			type: Array,
 			default: [],
 			validate: input => {
-				if(!input.every(value => /\d+/.test(value))) {
-					throw new Error("Roles must be an array of snowflakes");
-				} else {
+				if(input.every(value => /\d+/.test(value))) {
 					return true;
+				} else {
+					throw new Error("Roles must be an array of snowflakes");
 				}
 			}
 		}
@@ -61,10 +61,10 @@ router.put("/autorole/bots", ratelimit({ max: 3, window: 5000 }), verify({
 			type: Array,
 			default: [],
 			validate: input => {
-				if(!input.every(value => /\d+/.test(value))) {
-					throw new Error("Roles must be an array of snowflakes");
-				} else {
+				if(input.every(value => /\d+/.test(value))) {
 					return true;
+				} else {
+					throw new Error("Roles must be an array of snowflakes");
 				}
 			}
 		}
