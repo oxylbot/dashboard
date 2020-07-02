@@ -3,8 +3,7 @@
 		<div class="row">
 			<div class="col-12 mb-4">
 				<button type="button" class="btn" @click="addCensor()">
-					<font-awesome-icon icon="plus-square" class="mr-1"></font-awesome-icon>
-					Add a censor
+					<font-awesome-icon icon="plus-square" class="mr-1"></font-awesome-icon> Add a censor
 				</button>
 			</div>
 			<div class="col-sm-12 col-lg-6 col-xl-4" v-for="(censor, i) in censors" :key="i">

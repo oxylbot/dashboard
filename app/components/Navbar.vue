@@ -21,27 +21,27 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item" :class="{ active: $route.name === 'home' }">
           <router-link class="nav-link" :to="{ name: 'home' }">
-            <font-awesome-icon icon="home"></font-awesome-icon>Home
+            <font-awesome-icon icon="home"></font-awesome-icon> Home
           </router-link>
         </li>
         <li class="nav-item" :class="{ active: $route.name === 'invite' }">
           <router-link class="nav-link" :to="{ name: 'invite' }">
-            <font-awesome-icon icon="user-plus"></font-awesome-icon>Invite
+            <font-awesome-icon icon="user-plus"></font-awesome-icon> Invite
           </router-link>
         </li>
         <li class="nav-item" :class="{ active: $route.name === 'support' }">
           <router-link class="nav-link" :to="{ name: 'support' }">
-            <font-awesome-icon icon="question-circle"></font-awesome-icon>Support
+            <font-awesome-icon icon="question-circle"></font-awesome-icon> Support
           </router-link>
         </li>
         <li class="nav-item" :class="{ active: $route.name === 'commands' }">
           <router-link class="nav-link" :to="{ name: 'commands' }">
-            <font-awesome-icon icon="exclamation-circle"></font-awesome-icon>Commands
+            <font-awesome-icon icon="exclamation-circle"></font-awesome-icon> Commands
           </router-link>
         </li>
         <li class="nav-item" :class="{ active: $route.name === 'status' }">
           <router-link class="nav-link" :to="{ name: 'status' }">
-            <font-awesome-icon icon="chart-line"></font-awesome-icon>Status
+            <font-awesome-icon icon="chart-line"></font-awesome-icon> Status
           </router-link>
         </li>
       </ul>

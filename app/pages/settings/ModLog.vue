@@ -22,8 +22,7 @@
 		<div class="row">
 			<div class="col-12 mb-4">
 				<button type="button" class="btn" @click="addThreshold()">
-					<font-awesome-icon icon="plus-square" class="mr-1"></font-awesome-icon>
-					Add a warning threshold
+					<font-awesome-icon icon="plus-square" class="mr-1"></font-awesome-icon> Add a warning threshold
 				</button>
 			</div>
 			<div class="col-sm-12 col-lg-6 col-xl-4" v-for="(threshold, i) in thresholds" :key="i">

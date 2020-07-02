@@ -3,8 +3,7 @@
 		<div class="row">
 			<div class="col-12 mb-4">
 				<button type="button" class="btn" @click="addSubreddit()">
-					<font-awesome-icon icon="plus-square" class="mr-1"></font-awesome-icon>
-					Add a Reddit feed
+					<font-awesome-icon icon="plus-square" class="mr-1"></font-awesome-icon> Add a Reddit feed
 				</button>
 			</div>
 			<div class="col-sm-12 col-lg-6 col-xl-4" v-for="subreddit in subreddits" :key="subreddit.id">
@@ -18,9 +17,7 @@
 					<ul class="list-group list-group-flush">
 						<li class="list-group-item">Type: {{subreddit.type}}</li>
 						<li class="list-group-item">
-							Posts to:
-							<font-awesome-icon icon="hashtag"></font-awesome-icon>
-							{{guild.channels.find(channel => channel.id === subreddit.channel).name}}
+							Posts to: <font-awesome-icon icon="hashtag"></font-awesome-icon> {{guild.channels.find(channel => channel.id === subreddit.channel).name}}
 						</li>
 					</ul>
 				</div>

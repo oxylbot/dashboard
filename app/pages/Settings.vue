@@ -16,62 +16,52 @@
 								<div class="container p-0 border-bottom mt-2 mb-3"></div>
 								<li class="nav-item">
 									<router-link class="nav-link" :class="{ active: $route.name === 'settings.censors' }" :to="{ name: 'settings.censors', params: { id: $route.params.id } }">
-										<font-awesome-icon icon="asterisk"></font-awesome-icon>
-										Censors
+										<font-awesome-icon icon="asterisk"></font-awesome-icon> Censors
 									</router-link>
 								</li>
 								<li class="nav-item">
 									<router-link class="nav-link" :class="{ active: $route.name === 'settings.channels' }" :to="{ name: 'settings.channels', params: { id: $route.params.id } }">
-										<font-awesome-icon icon="microphone-alt"></font-awesome-icon>
-										Channels
+										<font-awesome-icon icon="microphone-alt"></font-awesome-icon> Channels
 									</router-link>
 								</li>
 								<li class="nav-item">
 									<router-link class="nav-link" :class="{ active: $route.name === 'settings.modlog' }" :to="{ name: 'settings.modlog', params: { id: $route.params.id } }">
-										<font-awesome-icon icon="address-card"></font-awesome-icon>
-										Mod Log
+										<font-awesome-icon icon="address-card"></font-awesome-icon> Mod Log
 									</router-link>
 								</li>
 								<li class="nav-item">
 									<router-link class="nav-link" :class="{ active: $route.name === 'settings.music' }" :to="{ name: 'settings.music', params: { id: $route.params.id } }">
-										<font-awesome-icon icon="headphones-alt"></font-awesome-icon>
-										Music
+										<font-awesome-icon icon="headphones-alt"></font-awesome-icon> Music
 									</router-link>
 								</li>
 								<li class="nav-item">
 									<router-link class="nav-link" :class="{ active: $route.name === 'settings.permissions' }" :to="{ name: 'settings.permissions', params: { id: $route.params.id } }">
-										<font-awesome-icon icon="tasks"></font-awesome-icon>
-										Permissions
+										<font-awesome-icon icon="tasks"></font-awesome-icon> Permissions
 									</router-link>
 								</li>
 								<li class="nav-item">
 									<router-link class="nav-link" :class="{ active: $route.name === 'settings.prefix' }" :to="{ name: 'settings.prefix', params: { id: $route.params.id } }">
-										<font-awesome-icon icon="question"></font-awesome-icon>
-										Prefix
+										<font-awesome-icon icon="question"></font-awesome-icon> Prefix
 									</router-link>
 								</li>
 								<li class="nav-item">
 									<router-link class="nav-link" :class="{ active: $route.name === 'settings.reddit' }" :to="{ name: 'settings.reddit', params: { id: $route.params.id } }">
-										<font-awesome-icon :icon="['fab', 'reddit-alien']"></font-awesome-icon>
-										Reddit
+										<font-awesome-icon :icon="['fab', 'reddit-alien']"></font-awesome-icon> Reddit
 									</router-link>
 								</li>
 								<li class="nav-item">
 									<router-link class="nav-link" :class="{ active: $route.name === 'settings.roles' }" :to="{ name: 'settings.roles', params: { id: $route.params.id } }">
-										<font-awesome-icon icon="user-tag"></font-awesome-icon>
-										Roles
+										<font-awesome-icon icon="user-tag"></font-awesome-icon> Roles
 									</router-link>
 								</li>
 								<li class="nav-item">
 									<router-link class="nav-link" :class="{ active: $route.name === 'settings.suggestions' }" :to="{ name: 'settings.suggestions', params: { id: $route.params.id } }">
-										<font-awesome-icon icon="user-edit"></font-awesome-icon>
-										Suggestions
+										<font-awesome-icon icon="user-edit"></font-awesome-icon> Suggestions
 									</router-link>
 								</li>
 								<li class="nav-item">
 									<router-link class="nav-link" :class="{ active: $route.name === 'settings.twitch' }" :to="{ name: 'settings.twitch', params: { id: $route.params.id } }">
-										<font-awesome-icon :icon="['fab', 'twitch']"></font-awesome-icon>
-										Twitch
+										<font-awesome-icon :icon="['fab', 'twitch']"></font-awesome-icon> Twitch
 									</router-link>
 								</li>
 							</ul>

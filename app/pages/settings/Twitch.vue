@@ -3,8 +3,7 @@
 		<div class="row">
 			<div class="col-12 mb-4">
 				<button type="button" class="btn" @click="addChannel()">
-					<font-awesome-icon icon="plus-square" class="mr-1"></font-awesome-icon>
-					Add a Twitch feed
+					<font-awesome-icon icon="plus-square" class="mr-1"></font-awesome-icon> Add a Twitch feed
 				</button>
 			</div>
 			<div class="col-sm-12 col-lg-6 col-xl-4" v-for="channel in channels" :key="channel.id">
@@ -17,9 +16,7 @@
 					</div>
 					<ul class="list-group list-group-flush">
 						<li class="list-group-item">
-							Posts to:
-							<font-awesome-icon icon="hashtag"></font-awesome-icon>
-							{{guild.channels.find(dChannel => dChannel.id === channel.discordChannel).name}}
+							Posts to: <font-awesome-icon icon="hashtag"></font-awesome-icon> {{guild.channels.find(dChannel => dChannel.id === channel.discordChannel).name}}
 						</li>
 					</ul>
 				</div>
