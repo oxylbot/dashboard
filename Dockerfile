@@ -8,7 +8,7 @@ WORKDIR /app
 
 RUN npm install
 
-RUN NODE_ENV=production npm run bundle
+RUN NODE_ENV=development npm run bundle
 
 RUN npm prune --production
 

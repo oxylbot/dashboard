@@ -123,7 +123,7 @@ export default {
 	data() {
 		return {
 			dropdown: null,
-			realValue: this.value || (this.multiple ? [] : null),
+			selected: this.value || (this.multiple ? [] : null),
 			filteredChannels: this.channels.filter(channel => {
 				if(this.filter === "category") return channel.type === 4;
 				else if(this.filter === "voice") return channel.type === 2;
@@ -161,35 +161,35 @@ export default {
 	},
 	computed: {
 		chosenChannels() {
-			if(this.multiple) return this.filteredChannels.filter(channel => this.realValue.includes(channel.id));
-			else return this.realValue ? [this.filteredChannels.find(channel => channel.id === this.realValue)] : [];
+			if(this.multiple) return this.filteredChannels.filter(channel => this.selected.includes(channel.id));
+			else return this.selected ? [this.filteredChannels.find(channel => channel.id === this.selected)] : [];
 		},
 		unchosenChannels() {
-			if(this.multiple) return this.filteredChannels.filter(channel => !this.realValue.includes(channel.id));
-			else return this.filteredChannels.filter(channel => channel.id !== this.realValue);
+			if(this.multiple) return this.filteredChannels.filter(channel => !this.selected.includes(channel.id));
+			else return this.filteredChannels.filter(channel => channel.id !== this.selected);
 		}
 	},
 	methods: {
 		addChannel(channel) {
 			if(!this.multiple) {
-				this.realValue = channel.id;
+				this.selected = channel.id;
 				this.dropdown.toggle();
 			} else {
-				this.realValue.push(channel.id);
+				this.selected.push(channel.id);
 			}
 
-			this.$emit("input", this.realValue);
+			this.$emit("input", this.selected);
 		},
 		removeChannel(channelID) {
-			this.realValue.splice(this.realValue.indexOf(channelID), 1);
-			this.$emit("input", this.realValue);
+			this.selected.splice(this.selected.indexOf(channelID), 1);
+			this.$emit("input", this.selected);
 		}
 	},
 	watch: {
 		value(newValue, oldValue) {
-			if(this.multiple && !newValue) this.realValue = [];
-			else if(!this.multiple && !newValue) this.realValue = null;
-			else this.realValue = newValue;
+			if(this.multiple && !newValue) this.selected = [];
+			else if(!this.multiple && !newValue) this.selected = null;
+			else this.selected = newValue;
 		}
 	},
 	async mounted() {

@@ -121,7 +121,7 @@ export default {
 	data() {
 		return {
 			dropdown: null,
-			realValue: this.value || (this.multiple ? [] : null)
+			selected: this.value || (this.multiple ? [] : null)
 		};
 	},
 	props: {
@@ -144,35 +144,35 @@ export default {
 	},
 	computed: {
 		chosenRoles() {
-			if(this.multiple) return this.roles.filter(role => this.realValue.includes(role.id));
-			else return this.realValue ? [this.roles.find(role => role.id === this.realValue)] : [];
+			if(this.multiple) return this.roles.filter(role => this.selected.includes(role.id));
+			else return this.selected ? [this.roles.find(role => role.id === this.selected)] : [];
 		},
 		filteredRoles() {
-			if(this.multiple) return this.roles.filter(role => !this.realValue.includes(role.id));
-			else return this.roles.filter(role => role.id !== this.realValue);
+			if(this.multiple) return this.roles.filter(role => !this.selected.includes(role.id));
+			else return this.roles.filter(role => role.id !== this.selected);
 		}
 	},
 	methods: {
 		addRole(role) {
 			if(!this.multiple) {
-				this.realValue = role.id;
+				this.selected = role.id;
 				this.dropdown.toggle();
 			} else {
-				this.realValue.push(role.id);
+				this.selected.push(role.id);
 			}
 
-			this.$emit("input", this.realValue);
+			this.$emit("input", this.selected);
 		},
 		removeRole(roleID) {
-			this.realValue.splice(this.realValue.indexOf(roleID), 1);
-			this.$emit("input", this.realValue);
+			this.selected.splice(this.selected.indexOf(roleID), 1);
+			this.$emit("input", this.selected);
 		}
 	},
 	watch: {
 		value(newValue, oldValue) {
-			if(this.multiple && !newValue) this.realValue = [];
-			else if(!this.multiple && !newValue) this.realValue = null;
-			else this.realValue = newValue;
+			if(this.multiple && !newValue) this.selected = [];
+			else if(!this.multiple && !newValue) this.selected = null;
+			else this.selected = newValue;
 		}
 	},
 	async mounted() {

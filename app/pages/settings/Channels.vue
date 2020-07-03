@@ -1,7 +1,7 @@
 <template>
 	<form>
 		<div class="form-group custom-control custom-switch">
-			<input type="checkbox" class="custom-control-input" id="channelsEnabled" v-model="enabled">
+			<input type="checkbox" class="custom-control-input" id="channelsEnabled" v-model="enabled" />
 			<label class="custom-control-label" for="channelsEnabled">Enable Channels</label>
 			<small class="form-text">Whether or not to enable channels, a feature where users can create their own voice channels that last temporarily.</small>
 		</div>
@@ -41,7 +41,7 @@ export default {
 					value
 				});
 
-				await this.saveSettings();
+				if(this.category) await this.saveSettings();
 			}
 		},
 		category: {
