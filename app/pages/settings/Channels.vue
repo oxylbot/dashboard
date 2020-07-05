@@ -7,7 +7,7 @@
 		</div>
 		<div class="form-group">
 			<label>Channel Category</label>
-			<channelselector :channels="guild.channels" filter="category" v-model="category"></channelselector>
+			<channelselector :channels="guild.channels" filter="category" v-model="categoryId"></channelselector>
 			<small class="form-text">What category to make the voice channels in.</small>
 		</div>
 	</form>
@@ -41,17 +41,17 @@ export default {
 					value
 				});
 
-				if(this.category) await this.saveSettings();
+				if(this.categoryId) await this.saveSettings();
 			}
 		},
-		category: {
+		categoryId: {
 			get() {
-				return this.guild.settings.channels.category;
+				return this.guild.settings.channels.categoryId;
 			},
 			async set(value) {
 				this.$store.commit("guilds/updateSetting", {
 					id: this.$route.params.id,
-					path: "channels.category",
+					path: "channels.categoryId",
 					value
 				});
 
@@ -69,7 +69,7 @@ export default {
 				},
 				body: {
 					enabled: this.enabled,
-					categoryId: this.category
+					categoryId: this.categoryId
 				}
 			});
 		}
