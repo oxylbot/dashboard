@@ -49,7 +49,7 @@ router.post("/", ratelimit({ max: 1, window: 5000 }), verify({
 		.ok(({ status }) => status < 500)
 		.send({
 			name: req.body.name,
-			description: resp.body.description,
+			description: req.body.description,
 			duration: req.body.duration,
 			regex: req.body.regex,
 			whitelistedRoles: req.body.whitelistedRoles
