@@ -38,7 +38,7 @@ router.post("/", ratelimit({ max: 1, window: 5000 }), verify({
 				if(input.every(value => /\d+/.test(value))) {
 					return true;
 				} else {
-					throw new Error("Duration must be an integer");
+					throw new Error("Whitelisted roles must be an array of role IDs");
 				}
 			}
 		}
@@ -80,7 +80,7 @@ router.patch("/:id", ratelimit({ max: 3, window: 5000 }), verify({
 			type: Number,
 			validate: input => {
 				if(Number.isInteger(input)) return true;
-				else throw new Error("Duration must be an integer");
+				else throw new Error("Whitelisted roles must be an array of role IDs");
 			}
 		},
 		regex: String,
