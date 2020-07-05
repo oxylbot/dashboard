@@ -81,7 +81,7 @@ export default {
 	methods: {
 		async saveSettings() {
 			await apiRequest({
-				path: `settings/${this.$route.params.id}/channels/`,
+				path: `settings/${this.$route.params.id}/music`,
 				method: "PUT",
 				headers: {
 					Authorization: this.authToken

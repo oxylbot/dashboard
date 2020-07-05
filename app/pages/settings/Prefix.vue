@@ -62,7 +62,7 @@ export default {
 	methods: {
 		async saveSettings() {
 			await apiRequest({
-				path: `settings/${this.$route.params.id}/prefix/`,
+				path: `settings/${this.$route.params.id}/prefix`,
 				method: "PUT",
 				headers: {
 					Authorization: this.authToken
