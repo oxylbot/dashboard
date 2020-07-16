@@ -28,7 +28,7 @@ router.put("/", ratelimit({ max: 3, window: 5000 }), verify({
 	}
 }), async (req, res) => {
 	const resp = await superagent
-		.patch(`${req.app.locals.gatewayBaseURL}/settings/${req.params.guildId}/mod-log`)
+		.put(`${req.app.locals.gatewayBaseURL}/settings/${req.params.guildId}/mod-log`)
 		.ok(({ status }) => status < 500)
 		.send(req.verified);
 
