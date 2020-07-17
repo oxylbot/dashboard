@@ -1,8 +1,8 @@
 <template>
 	<form>
 		<div class="form-group custom-control custom-switch">
-			<input type="checkbox" class="custom-control-input" id="nowPlaying" v-model="nowPlaying">
-			<label class="custom-control-label" for="nowPlaying">Now Playing Messages</label>
+			<input type="checkbox" class="custom-control-input" id="nowPlayingMessages" v-model="nowPlayingMessages">
+			<label class="custom-control-label" for="nowPlayingMessages">Now Playing Messages</label>
 			<small class="form-text">Whether or not to messages which say when a song is now playing.</small>
 		</div>
 		<div class="form-group custom-control custom-switch">
@@ -35,9 +35,9 @@ export default {
 				return state[this.$route.params.id];
 			}
 		}),
-		nowPlaying: {
+		nowPlayingMessages: {
 			get() {
-				return this.guild.settings.music.nowPlaying;
+				return this.guild.settings.music.nowPlayingMessages;
 			},
 			async set(value) {
 				this.$store.commit("guilds/updateSetting", {
@@ -87,7 +87,7 @@ export default {
 					Authorization: this.authToken
 				},
 				body: {
-					enabled: this.enabled,
+					nowPlayingMessages: this.nowPlayingMessages,
 					voteSkip: this.voteSkip,
 					maxLength: this.maxLength
 				}

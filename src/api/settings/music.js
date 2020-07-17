@@ -8,7 +8,7 @@ const router = express.Router({ mergeParams: true }); // eslint-disable-line new
 router.put("/", ratelimit({ max: 3, window: 5000 }), verify({
 	type: "body",
 	fields: {
-		enabled: Boolean,
+		nowPlayingMessages: Boolean,
 		voteSkip: Boolean,
 		maxLength: {
 			type: Number,
