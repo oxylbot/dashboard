@@ -1,5 +1,5 @@
 <template>
-	<div class="container">
+	<div class="container" style="overflow:hidden">
 		<div class="container" style="margin: 5rem 0rem">
 			<div class="row my-4">
 				<div class="col text-center mb-4" v-scroll-reveal="{ origin: 'top', distance: '50%', duration: 1500, delay: 500 }">
