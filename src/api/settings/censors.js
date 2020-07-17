@@ -22,6 +22,13 @@ router.post("/", ratelimit({ max: 1, window: 5000 }), verify({
 				else return true;
 			}
 		},
+		punishment: {
+			type: String,
+			validate: input => {
+				if(["delete", "warn", "mute", "kick", "softban", "ban"].includes(input)) return true;
+				else throw new Error("Invalid punishment type");
+			}
+		},
 		duration: {
 			type: Number,
 			optional: true,
@@ -50,6 +57,7 @@ router.post("/", ratelimit({ max: 1, window: 5000 }), verify({
 		.send({
 			name: req.body.name,
 			description: req.body.description,
+			punishment: req.body.punishment,
 			duration: req.body.duration,
 			regex: req.body.regex,
 			whitelistedRoles: req.body.whitelistedRoles
@@ -74,6 +82,13 @@ router.patch("/:id", ratelimit({ max: 3, window: 5000 }), verify({
 			validate: input => {
 				if(input.length > 512) throw new Error("Description must be less than 512 characters");
 				else return true;
+			}
+		},
+		punishment: {
+			type: String,
+			validate: input => {
+				if(["delete", "warn", "mute", "kick", "softban", "ban"].includes(input)) return true;
+				else throw new Error("Invalid punishment type");
 			}
 		},
 		duration: {

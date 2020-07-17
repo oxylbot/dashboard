@@ -141,6 +141,7 @@ export default {
 					body: {
 						name: this.edit.name,
 						description: this.edit.description,
+						punishment: this.edit.punishment,
 						duration: this.edit.duration,
 						regex: this.edit.regex,
 						whitelistedRoles: this.edit.whitelistedRoles
@@ -171,6 +172,7 @@ export default {
 					body: {
 						name: this.edit.name,
 						description: this.edit.description,
+						punishment: this.edit.punishment,
 						duration: this.edit.duration,
 						regex: this.edit.regex,
 						whitelistedRoles: this.edit.whitelistedRoles

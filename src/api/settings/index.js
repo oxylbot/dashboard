@@ -203,7 +203,7 @@ router.get("/:id(\\d+)", ratelimit({ max: 3, window: 5000 }), async (req, res) =
 	guild.settings.reddit = body.settings.reddit || [];
 
 	if(body.settings.roles && body.settings.roles.autorole) {
-		guild.settings.roles.autorole = body.settings.roles.autorole;
+		guild.settings.roles.autorole = body.settings.roles.autorole.roles;
 	} else {
 		guild.settings.roles.autorole = [];
 	}
@@ -212,13 +212,13 @@ router.get("/:id(\\d+)", ratelimit({ max: 3, window: 5000 }), async (req, res) =
 	else guild.settings.roles.roleme = [];
 
 	if(body.settings.roles && body.settings.roles.autorolebot) {
-		guild.settings.roles.autorolebot = body.settings.roles.autorolebot;
+		guild.settings.roles.autorolebot = body.settings.roles.autorolebot.roles;
 	} else {
 		guild.settings.roles.autorolebot = [];
 	}
 
 	if(body.settings.roles && body.settings.roles.autorole) {
-		guild.settings.roles.autorole = body.settings.roles.autorole;
+		guild.settings.roles.autorole = body.settings.roles.autorole.roles;
 	} else {
 		guild.settings.roles.autorole = [];
 	}
