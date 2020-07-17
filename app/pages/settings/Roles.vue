@@ -68,7 +68,7 @@ export default {
 				});
 
 				await apiRequest({
-					path: `settings/${this.$route.params.id}/autorole/bots`,
+					path: `settings/${this.$route.params.id}/roles/autorole/bots`,
 					method: "PUT",
 					headers: {
 						Authorization: this.authToken
@@ -89,7 +89,7 @@ export default {
 				});
 
 				await apiRequest({
-					path: `settings/${this.$route.params.id}/roleme`,
+					path: `settings/${this.$route.params.id}/roles/roleme`,
 					method: "PUT",
 					headers: {
 						Authorization: this.authToken
