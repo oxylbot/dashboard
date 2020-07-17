@@ -2,7 +2,7 @@
 	<form>
 		<div class="form-group">
 			<label for="prefix">Custom Prefix</label>
-			<input type="text" class="form-control" id="prefix" maxlength="10" placeholder="Enter prefix" v-model="custom">
+			<input type="text" class="form-control" id="prefix" maxlength="10" placeholder="Enter prefix" v-model.lazy="custom">
 			<small class="form-text">Custom prefix for Oxyl to use. Leave blank for none.</small>
 		</div>
 		<div class="form-group custom-control custom-switch">
