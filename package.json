@@ -56,7 +56,7 @@
     "vue": "2.6.11",
     "vue-eslint-parser": "7.1.0",
     "vue-loader": "15.9.3",
-    "vue-router": "3.4.0",
+    "vue-router": "3.4.1",
     "vue-scroll-reveal": "1.0.11",
     "vue-template-compiler": "2.6.11",
     "vuex": "3.5.1",
