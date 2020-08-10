@@ -46,7 +46,7 @@
     "favicons-webpack-plugin": "4.2.0",
     "file-loader": "6.0.0",
     "html-webpack-plugin": "4.3.0",
-    "mini-css-extract-plugin": "0.9.0",
+    "mini-css-extract-plugin": "0.10.0",
     "node-sass": "^4.14.1",
     "pace": "0.0.4",
     "pace-progress": "1.0.2",
