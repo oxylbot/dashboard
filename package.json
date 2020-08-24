@@ -50,7 +50,7 @@
     "node-sass": "^4.14.1",
     "pace": "0.0.4",
     "pace-progress": "1.0.2",
-    "sass-loader": "9.0.3",
+    "sass-loader": "10.0.0",
     "style-loader": "1.2.1",
     "uglifyjs-webpack-plugin": "2.2.0",
     "vue": "2.6.11",
