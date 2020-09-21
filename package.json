@@ -45,7 +45,7 @@
     "eslint-plugin-vue": "6.2.2",
     "favicons-webpack-plugin": "4.2.0",
     "file-loader": "6.1.0",
-    "html-webpack-plugin": "4.4.1",
+    "html-webpack-plugin": "4.5.0",
     "mini-css-extract-plugin": "0.11.2",
     "node-sass": "^4.14.1",
     "pace": "0.0.4",
