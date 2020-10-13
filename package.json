@@ -37,7 +37,7 @@
     "babel-preset-env": "1.7.0",
     "bootstrap": "4.5.3",
     "bootstrap.native": "^3.0.13",
-    "css-loader": "4.3.0",
+    "css-loader": "5.0.0",
     "eslint": "7.11.0",
     "eslint-config-recommended": "4.0.0",
     "eslint-plugin-html": "6.1.0",
