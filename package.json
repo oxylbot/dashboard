@@ -38,7 +38,7 @@
     "bootstrap": "4.5.3",
     "bootstrap.native": "^3.0.13",
     "css-loader": "5.0.1",
-    "eslint": "7.12.1",
+    "eslint": "7.13.0",
     "eslint-config-recommended": "4.0.0",
     "eslint-plugin-html": "6.1.0",
     "eslint-plugin-import": "2.22.1",
