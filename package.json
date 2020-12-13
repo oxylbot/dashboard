@@ -20,7 +20,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-winston": "^4.0.5",
-    "ioredis": "^4.19.2",
+    "ioredis": "^4.19.3",
     "superagent": "^6.1.0",
     "winston": "^3.3.3"
   },
