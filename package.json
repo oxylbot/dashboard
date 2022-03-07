@@ -54,7 +54,7 @@
     "style-loader": "2.0.0",
     "uglifyjs-webpack-plugin": "2.2.0",
     "vue": "2.6.11",
-    "vue-eslint-parser": "7.4.1",
+    "vue-eslint-parser": "8.3.0",
     "vue-loader": "15.9.6",
     "vue-router": "3.5.1",
     "vue-scroll-reveal": "1.0.11",
