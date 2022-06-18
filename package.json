@@ -21,7 +21,7 @@
     "express": "^4.17.1",
     "express-winston": "^4.0.5",
     "ioredis": "^4.20.0",
-    "superagent": "^6.1.0",
+    "superagent": "^7.1.6",
     "winston": "^3.3.3"
   },
   "devDependencies": {
