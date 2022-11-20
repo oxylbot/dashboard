@@ -19,7 +19,7 @@
   "homepage": "https://github.com/oxylbot/dashboard#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "express-winston": "^4.0.5",
+    "express-winston": "^4.2.0",
     "ioredis": "^4.20.0",
     "superagent": "^6.1.0",
     "winston": "^3.3.3"
