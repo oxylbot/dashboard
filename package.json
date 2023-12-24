@@ -58,7 +58,7 @@
     "vue-loader": "15.9.6",
     "vue-router": "3.5.1",
     "vue-scroll-reveal": "1.0.11",
-    "vue-template-compiler": "2.6.11",
+    "vue-template-compiler": "2.7.16",
     "vuex": "3.6.2",
     "webpack": "4.44.2",
     "webpack-cli": "3.3.12",
