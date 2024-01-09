@@ -51,7 +51,7 @@
     "pace": "0.0.4",
     "pace-progress": "1.0.2",
     "sass-loader": "10.1.1",
-    "style-loader": "2.0.0",
+    "style-loader": "3.3.4",
     "uglifyjs-webpack-plugin": "2.2.0",
     "vue": "2.6.11",
     "vue-eslint-parser": "7.4.1",
