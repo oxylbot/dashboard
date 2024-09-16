@@ -31,7 +31,7 @@
     "@fortawesome/free-brands-svg-icons": "5.15.2",
     "@fortawesome/free-solid-svg-icons": "5.15.2",
     "@fortawesome/vue-fontawesome": "2.0.2",
-    "babel-loader": "8.2.2",
+    "babel-loader": "9.2.1",
     "babel-plugin-syntax-dynamic-import": "6.18.0",
     "babel-polyfill": "6.26.0",
     "babel-preset-env": "1.7.0",
